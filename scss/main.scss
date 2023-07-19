@@ -1,5 +1,10 @@
-div {
-  width: 100px;
-  height: 100px;
-  background-color: greenyellow;
+@import "base/reset";
+
+@import "layout/header";
+
+@import "abstracts/variables";
+
+body {
+  // 지울 것
+  height: 2000px;
 }

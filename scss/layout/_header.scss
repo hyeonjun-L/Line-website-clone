@@ -1,0 +1,38 @@
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  position: fixed;
+  width: 100%;
+  height: 75px;
+
+  opacity: 0.95;
+  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  .headerMenu {
+    display: flex;
+    justify-content: space-between;
+    width: 381px;
+  }
+}
+
+.header .headerMenu {
+  .viewPoint {
+    padding-bottom: 4px;
+    border-bottom: 4px solid black;
+  }
+}
+
+.header .headerMenu {
+  a {
+    font-size: 16px;
+    font-weight: 700;
+  }
+}
+
+.header :last-child {
+  vertical-align: middle;
+}
