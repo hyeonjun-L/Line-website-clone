@@ -1,7 +1,109 @@
-.mvArea {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
+@mixin movie($min) {
+  .mvArea {
+    position: relative;
+    width: 100vw;
+    height: if($min, 70vh, 100vh);
+    min-width: if($min, 800px, 1200px);
+    overflow: hidden;
 
-  overflow: hidden;
+    .movie {
+      img {
+        width: 100%;
+        height: 100vh;
+        @if ($min) {
+          padding-bottom: 70vh;
+        }
+        object-fit: cover;
+      }
+    }
+
+    .mvText {
+      position: absolute;
+      @if ($min) {
+        bottom: 78px;
+        left: 17px;
+      } @else {
+        bottom: calc(50% - 200px);
+        left: 142px;
+      }
+      z-index: 1;
+      color: $white-color;
+
+      .mvSubTxt {
+        font-size: if($min, 14px, 35px);
+        text-indent: if($min, 3px, 8px);
+        font-family: $title-font-family;
+        margin-bottom: 50px;
+      }
+
+      .mainTitle {
+        font-size: if($min, 60px, 140px);
+        margin-bottom: if($min, 10px, 20px);
+        font-family: $title-font-family;
+      }
+
+      .mvDownloadTxt {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        font-size: 14px;
+        font-weight: 700;
+        @if ($min) {
+          width: 154px;
+          height: 48px;
+          border-radius: 4px;
+          justify-content: center;
+          border: 1px solid white;
+        } @else {
+          height: 24px;
+          margin: 0 0 10px 10px;
+        }
+      }
+
+      .mvDownloadList {
+        display: flex;
+        gap: 5px;
+        @if ($min) {
+          display: none;
+        }
+
+        picture {
+          position: relative;
+          width: 50px;
+          height: 50px;
+          overflow: hidden;
+
+          border-radius: 4px;
+          border: 1px solid white;
+        }
+
+        #apple {
+          position: absolute;
+          top: 3px;
+          left: 6px;
+        }
+
+        #playstore {
+          position: absolute;
+          top: 3px;
+          left: -38px;
+        }
+
+        #pc {
+          position: absolute;
+          top: 3px;
+          left: -85px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 870px) {
+  @include movie(true);
+}
+
+@media not (max-width: 870px) {
+  @include movie(false);
 }

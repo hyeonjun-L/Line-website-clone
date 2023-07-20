@@ -1,11 +1,13 @@
 @import "base/reset";
-@import "base/animations";
-
-@import "layout/movie";
-@import "layout/header";
 
 @import "abstracts/variables";
 
+@import "layout/movie";
+@import "layout/header";
+@import "layout/mainTitleArea";
+@import "layout/mainService";
+
+@import "base/animations";
 body {
   // 지울 것
   height: 2000px;

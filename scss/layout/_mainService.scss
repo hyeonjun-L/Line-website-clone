@@ -1,0 +1,87 @@
+@mixin mainService($min) {
+  .mainService {
+    margin-top: 100px;
+    width: 100vw;
+    // flex-direction: column;
+  }
+  .service {
+    display: flex;
+    justify-content: center;
+
+    width: 100vw;
+  }
+
+  .txtArea {
+    padding-left: 30px;
+    min-width: 590px;
+    .serviceIcon {
+      width: 80px;
+      height: 80px;
+      margin-top: 60px;
+      border-radius: 15px;
+      border: 0.5px solid rgba(0, 0, 0, 0.1);
+    }
+
+    h3 {
+      font-size: 40px;
+      margin: 20px 0 20px 0;
+      line-height: 1.2;
+      font-weight: 700;
+    }
+
+    h4 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      line-height: 1.56;
+      color: #07b53b;
+    }
+
+    div {
+      margin-bottom: 60px;
+      font-size: 18px;
+      color: #777;
+      line-height: 1.7;
+    }
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      gap: 8px;
+      width: 150px;
+      height: 60px;
+      line-height: 3.54;
+      font-size: 14px;
+
+      border-radius: 5px;
+      border: 0.1px solid rgba(0, 0, 0, 0.2);
+      img {
+        width: 25px;
+        height: 25px;
+      }
+    }
+  }
+
+  .imgArea {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    max-width: 800px;
+
+    overflow: hidden;
+    .serviceImg {
+      position: absolute;
+      top: 0;
+      left: -200px;
+    }
+  }
+}
+
+@media (max-width: 870px) {
+  @include mainService(true);
+}
+
+@media not (max-width: 870px) {
+  @include mainService(false);
+}

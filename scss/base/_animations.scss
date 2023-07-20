@@ -1,8 +1,12 @@
-// 애니메이션
+@keyframes zoomIn {
+  0% {
+    transform: scale(2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 
 .movie {
-  $i: 1;
-  @while ($i > 0) {
-    width: 1000px;
-  }
+  animation: zoomIn 10s infinite;
 }
