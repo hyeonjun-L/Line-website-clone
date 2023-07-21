@@ -5,7 +5,7 @@
     height: if($min, 70vh, 100vh);
     min-width: if($min, 800px, 1200px);
     overflow: hidden;
-
+    font-weight: 700;
     .movie {
       img {
         width: 100%;
@@ -32,14 +32,14 @@
       .mvSubTxt {
         font-size: if($min, 14px, 35px);
         text-indent: if($min, 3px, 8px);
-        font-family: $title-font-family;
+        font-family: LINESeedKR-Bd;
         margin-bottom: 50px;
       }
 
       .mainTitle {
         font-size: if($min, 60px, 140px);
         margin-bottom: if($min, 10px, 20px);
-        font-family: $title-font-family;
+        font-family: LINESeedKR-Bd;
       }
 
       .mvDownloadTxt {

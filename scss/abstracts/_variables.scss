@@ -3,8 +3,14 @@
 // 구역의 영역 변수 값
 
 body {
-  font-family: SFPro, Arial, Noto Sans JP, AppleSDGothicNeo, sans-serif;
+  font-family: SFPro, Arial, Noto Sans JP, Noto Sans KR, sans-serif;
 }
 
-$title-font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+@font-face {
+  font-family: "SDSamliphopangche_Outline";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/SDSamliphopangche_Outline.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 $white-color: white;

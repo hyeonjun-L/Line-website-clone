@@ -1,15 +1,8 @@
-@mixin imgArea($l) {
+@mixin imgArea($l, $min) {
   position: relative;
-
-  @if ($l) {
-    width: 590px;
-    padding-left: 30px;
-    min-width: 590px;
-  } @else {
-    width: 100%;
-    max-width: 800px;
-  }
-  height: 600px;
+  width: 100%;
+  max-width: 640px;
+  height: 530px;
 
   overflow: hidden;
   .serviceImg {
@@ -19,35 +12,45 @@
   }
 }
 
-@mixin txtArea($r) {
-  @if ($r) {
-    width: 770px;
-    max-width: 770px;
+@mixin txtArea($min) {
+  width: 590px;
+  min-width: 590px;
+  position: relative;
 
-    border-left: 1px dashed black;
+  @if ($min) {
+    margin-left: 50px;
+    padding-left: 50px;
+    border-left: 1px dashed rgb(128, 128, 128);
   } @else {
-    width: 590px;
-    min-width: 590px;
-    border-right: 1px dashed black;
+    padding-left: 30px;
+    border-right: 1px dashed rgb(128, 128, 128);
   }
-  padding-left: 30px;
+
   .serviceIcon {
-    width: 80px;
-    height: 80px;
-    margin-top: 60px;
+    @if ($min) {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      top: 30px;
+      left: -30px;
+    } @else {
+      width: 80px;
+      height: 80px;
+      margin-top: 60px;
+    }
     border-radius: 15px;
     border: 0.5px solid rgba(0, 0, 0, 0.1);
   }
 
   h3 {
-    font-size: 40px;
+    font-size: if($min, 30px, 40px);
     margin: 20px 0 20px 0;
     line-height: 1.2;
     font-weight: 700;
   }
 
   h4 {
-    font-size: 18px;
+    font-size: if($min, 14px, 18px);
     font-weight: 600;
     margin-bottom: 12px;
     line-height: 1.56;
@@ -56,7 +59,7 @@
 
   div {
     margin-bottom: 60px;
-    font-size: 18px;
+    font-size: if($min, 14px, 18px);
     color: #777;
     line-height: 1.7;
   }
@@ -82,30 +85,32 @@
 
 @mixin mainService($min) {
   .mainService {
-    width: 100vw;
-    // flex-direction: column;
+    width: 100%;
+
+    @if ($min) {
+      margin-left: 15%;
+    }
   }
   .service {
     display: flex;
-    justify-content: center;
-
-    width: 100vw;
-  }
-
-  .txtAreaRight {
-    @include txtArea(true);
+    @if ($min) {
+      flex-direction: column-reverse;
+    } @else {
+      justify-content: center;
+    }
+    width: 100%;
   }
 
   .txtArea {
-    @include txtArea(false);
+    @include txtArea($min);
   }
 
   .imgArea {
-    @include imgArea(false);
+    @include imgArea(false, $min);
   }
 
-  .imgAreaLeft {
-    @include imgArea(true);
+  .imgArea__left {
+    @include imgArea(true, $min);
   }
 }
 
