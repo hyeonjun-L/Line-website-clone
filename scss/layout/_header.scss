@@ -1,12 +1,11 @@
 @mixin header($min) {
   .header {
     display: flex;
-    // justify-content: if($min, space-between, space-around);
     justify-content: space-between;
     align-items: center;
 
     position: fixed;
-    width: 100%;
+    width: 100vw;
     height: 75px;
     z-index: 2;
 
