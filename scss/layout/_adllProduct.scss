@@ -20,7 +20,7 @@
         padding: 25px 0;
         border-bottom: 1px solid rgba(0, 0, 0, 0.05);
       } @else {
-        background-color: #fff;
+        background-color: $product-hover-color;
         width: 230px;
         height: 280px;
         margin: 0 40px 40px 0;
@@ -36,6 +36,7 @@
           width: calc(100% - 90px);
         }
       }
+
       img {
         border-radius: 15px;
         border: 0.1px solid rgba(0, 0, 0, 0.1);
@@ -48,10 +49,23 @@
         margin-bottom: if($min, 0, 8px);
         font-weight: 700;
       }
+
       div {
         font-size: if($min, 12px, 14px);
         line-height: 1.429;
         color: #616161;
+      }
+
+      a {
+        @include seemore;
+        display: none;
+      }
+    }
+    @if not($min) {
+      :hover {
+        transition-duration: 1s;
+        filter: blur(1.5px);
+        background-color: darken($product-hover-color, 90%);
       }
     }
   }

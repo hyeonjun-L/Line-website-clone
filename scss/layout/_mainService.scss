@@ -1,3 +1,26 @@
+@mixin seemore() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 8px;
+  width: 150px;
+  height: 60px;
+  line-height: 3.54;
+  font-size: 14px;
+
+  border-radius: 5px;
+  border: 0.1px solid rgba(0, 0, 0, 0.2);
+  img {
+    width: 25px;
+    height: 25px;
+  }
+  &:hover {
+    color: white;
+    background-color: $download-hover-color;
+  }
+}
+
 @mixin imgArea($l, $min) {
   position: relative;
   width: 100%;
@@ -63,23 +86,9 @@
     color: #777;
     line-height: 1.7;
   }
+
   a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    gap: 8px;
-    width: 150px;
-    height: 60px;
-    line-height: 3.54;
-    font-size: 14px;
-
-    border-radius: 5px;
-    border: 0.1px solid rgba(0, 0, 0, 0.2);
-    img {
-      width: 25px;
-      height: 25px;
-    }
+    @include seemore;
   }
 }
 
